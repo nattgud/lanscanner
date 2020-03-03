@@ -1,0 +1,260 @@
+* {
+	font-family: Verdana, Sans-Serif;
+}
+body {
+	background-color: #eee;
+	overflow-x: hidden;
+}
+span,p,div,input {
+	font-family: Verdana, Sans-Serif;
+}
+.addPhoto {
+	display: inline-block;
+	cursor: pointer;
+	border: 2px solid #000;
+	background-color: #fff;
+	padding: 2px;
+	border-radius: 5px;
+	color: #000;
+	transition: background-color 200ms, color 200ms;
+}
+.addPhoto:hover {
+	background-color: #000;
+	color: #fff;
+}
+.addPhoto * {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: bottom;
+}
+#repeatButton * {
+	font-size: 14px!important;
+}
+tr > td:nth-child(2) {
+	width: 100%;
+}
+#devicelist .device .tools {
+	/*
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	*/
+	float: right;
+	font-size: 24px!important;
+	z-index: 3;
+	user-select: none;
+}
+#devicelist .device .tools span {
+	background-color: #afa;
+	border: 2px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 200ms;
+}
+#devicelist .device .tools span:hover {
+	background-color: #fff;
+}
+#devicelist:empty {
+	display: none;
+}
+#devicelist {
+	margin: 5px 0px;
+	border: 2px solid #aaa;
+	background-color: #fff;
+}
+.device {
+	position: relative;
+	border: 2px solid #aaa;
+	border-radius: 5px;
+	background-color: #fff;
+	margin: 5px;
+	padding: 2px;
+	display: inline-block;
+	vertical-align: top;
+	transition: background-color 200ms, color 200ms, border-color 200ms;
+}
+.device > div {
+	display: inline-block;
+	position: absolute;
+	left: 100vw;
+	top: 0px;
+	overflow: hidden;
+	background-color: #fff;
+	border: 2px solid #000;
+	border-radius: 5px;
+	padding: 10px;
+	opacity: 0;
+	z-index: 2;
+	transition: left 200ms, opacity 200ms;
+}
+.device:hover > div {
+	left: 28px;
+	opacity: 1;
+}
+.device > div p {
+	margin: 0px;
+	padding: 0px;
+	white-space: nowrap;
+	text-align: center;
+}
+.device > div td > p:nth-child(2) {
+	font-style: italic;
+	margin-right: 20px;
+}
+.device > div td > p:nth-child(3) {
+	font-weight: bold;
+	margin-right: 20px;
+}
+.device > div td > p:nth-child(5),.device p:nth-child(6) {
+	font-style: italic;
+}
+.device > div td > *:empty {
+	padding: 0px!important;
+	margin: 0px;
+}
+.device.offline {
+	border-color: #f00!important;
+	background-color: #fee!important;
+	transition: background-color 200ms;
+}
+.device .icon {
+	font-size: 24px!important;
+	vertical-align: middle;
+	text-align: center;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+}
+.device.host {
+	border-color: #0f0!important;
+}
+.device.selected {
+	border-color: #00f!important;
+	color: #00f;
+}
+.device.new {
+	background-color: #afa;
+}
+.device.new:hover {
+	background-color: #fff;
+	transition: background-color 200ms;
+}
+.device:not(.selected).loading {
+	animation-name: loading;
+	animation-duration: 200ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+@keyframes loading {
+	0% {
+		border-color: #000;
+	}
+	100% {
+		border-color: #00f;
+	}
+}	
+#load {
+	display: none;
+	margin: 0px 5px;
+	padding: 0px 5px;
+	animation-name: loader;
+	animation-duration: 1s;
+	border-left: 4px solid rgba(0,0,0,0);
+	animation-iteration-count: infinite;
+}
+@keyframes loader {
+	0% {
+		border-color: rgba(0,0,0,0);
+	}
+	50% {
+		border-color: rgba(0,0,0,1);
+	}
+	100% {
+		border-color: rgba(0,0,0,0);
+	}
+}
+table {
+	width: 100%;
+}
+td {
+	vertical-align: top;
+}
+img {
+	display: none;
+}
+canvas {
+	border: 1px solid #000;
+	display: none;
+	width: 100%;
+	transition: width 500ms;
+}
+#zoom {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	padding: 0px;
+	margin: 0px;
+	border: 2px solid #000;
+	border-radius: 10px;
+	background-color: #fff;
+}
+#zoom > span {
+	user-select: none;
+	padding: 5px;
+	margin: 0px;
+	cursor: pointer;
+	transition: background-color 200ms, color 200ms;
+}
+#zoom > span:hover {
+	background-color: #000;
+	color: #fff;
+}
+.button {
+	user-select: none;
+	display: inline-block;
+	padding: 2px;
+	margin: 0px;
+	text-align: center;
+	cursor: pointer;
+	border: 2px solid #a00;
+	border-radius: 5px;
+	background-color: #fff;
+	color: #000;
+	transition: background-color 200ms, color 200ms, border-color 200ms;
+}
+.button span:nth-of-type(2) {
+	bottom: 0px;
+	z-index: 5;
+	vertical-align: top;
+}
+.button.on {
+	border-color: #0a0;
+}
+.button:hover {
+	background-color: #000;
+	color: #fff;
+}
+#cd {
+	position: fixed;
+	top: 0px;
+	left: 50%;
+    transform: translate(-50%, 0);
+	padding: 5px;
+	border: 2px solid #000;
+	border-top: none;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #fff;
+	transition: top 1s;
+}
+#cd:not(.open) {
+	top: -40px;
+}
+
+
+
+
+
+
+
